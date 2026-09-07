@@ -28,7 +28,20 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     title: 'Day Board',
-    statusBarStyle: 'default',
+    // 'default' leaves the status bar as its own opaque strip. black-translucent
+    // lets the paper ground run under it, which is what makes it read as an app
+    // window rather than a page in a frame. The board already pads for the
+    // notch via env(safe-area-inset-top).
+    statusBarStyle: 'black-translucent',
+  },
+  other: {
+    // REQUIRED for iOS to launch this standalone instead of bouncing to Safari.
+    //
+    // Next's `appleWebApp.capable` emits only <meta name="mobile-web-app-capable">,
+    // the modern standard name. Safari does not read that one for standalone
+    // mode -- it reads the apple-prefixed legacy name, and without it an
+    // installed icon is just a bookmark. Both names have to be present.
+    'apple-mobile-web-app-capable': 'yes',
   },
 };
 
