@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+build/
+
+# Secrets. The board's token, the database URL, the calendar's private
+# iCal address and the Anthropic key all live here. Never commit this.
+.env
+.env.local
+.env*.local
+
+next-env.d.ts
+*.tsbuildinfo
+.vercel
+.DS_Store
+tsconfig.tsbuildinfo

@@ -1,0 +1,3 @@
+# Private, single-user board. Nothing here should ever be indexed.
+User-agent: *
+Disallow: /
